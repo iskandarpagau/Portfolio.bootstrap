@@ -16,16 +16,17 @@
 
 <body>
     <!-- Header Section -->
-    <header class="header">
-        <div class="logo">Portfolio</div>
+    <header class="header d-flex justify-content-between align-items-center fixed-top p-3 bg-transparent">
+        <a href="#" class="logo">Portfolio</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
         <nav class="navbar">
             <a href="#home" class="nav-link active"><i class="bi bi-house-door"></i> Home</a>
-            <a href="#projects" class="nav-link"><i class="bi bi-person"></i> projects</a>
-            <a href="#services" class="nav-link"><i class="bi bi-book"></i> Services</a>
+            <a href="#projects" class="nav-link"><i class="bi bi-book"></i> Projects</a>
             <a href="#skills" class="nav-link"><i class="bi bi-gear"></i> Skills</a>
             <a href="#contact" class="nav-link"><i class="bi bi-envelope"></i> Contact</a>
         </nav>
     </header>
+ 
 
     <!-- Home Section -->
     <section class="home d-flex align-items-center justify-content-between" id="home">
@@ -35,10 +36,9 @@
                 <h3>Frontend Developer</h3>
             </div>
             <p style="color: rgb(255, 255, 255);">Saya adalah seorang mahasiswa di Universitas Aisyiyah Yogyakarta.</p>            <div class="btn-box">
-                <a href="#" class="btn btn-primary">Hire Me</a>
-                <a href="#" class="btn btn-outline-primary">Let's Talk</a>
-                <a href="assets/cv.pdf" class="btn btn-outline-primary" download>
-                    <i class='bx bxs-download'></i> Download CV
+                   <a href="assets/cv.pdf" class="btn btn-outline-primary" download>
+                    <i class=''></i> Download CV
+                </a>
                 </a>
             </div>
         </div>
@@ -63,14 +63,14 @@
     <section class="projects overflow-hidden" id="projects">
         <div class="container px-4">
           <div class="projects-box">
-            <h1 class="fw-bold mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">Project</h1>  
+            <h1 class="fw-bold mb-3 text-center" data-aos="fade-up" data-aos-duration="1000" style="font-size: 5rem;">Project</h1>  
             <div class="row justify-content-center pt-4 gap-4">
                 <div class="col col-md-5 col-12 shadow p-3 rounded" data-aos="fade-right" data-aos-duration="1000">
                     <img src="Capture1.PNG" alt="Projects Image" width="100%" />
                 <h4 class="pt-4">Membuat JQuery</h4>
                 <p>ini adalah project JavaScript Dengan Menggunakan Library JQuery!</p>
                 <div>
-                  <a href="https://github.com/Rizkiskandar" target="_blank" class="btn btn-dark">Github</a>
+                  <a href="https://github.com/Rizkiskandar" target="_blank" class="btn btn-dark" style="font-size: 2rem;">Github</a>
                 </div>
               </div>
               <div class="col col-md-5 col-12 shadow p-3 rounded" data-aos="fade-right" data-aos-duration="1000">
@@ -78,15 +78,15 @@
                 <h4 class="pt-4">Membuat Tampilan Dashboard</h4>
                 <p>ini adalah project Dashboard Dengan Menggunakan Library Bootstrap!</p>
                 <div>
-                  <a href="https://github.com/Rizkiskandar" target="_blank" class="btn btn-dark">Github</a>
+                  <a href="https://github.com/Rizkiskandar" target="_blank" class="btn btn-dark" style="font-size: 2rem;">Github</a>
                 </div>
               </div>
               <div class="col col-md-5 col-12 shadow p-3 rounded" data-aos="fade-right" data-aos-duration="1000">
                 <img src="Capture3.PNG" alt="Projects Image" width="100%" />
                 <h4 class="pt-4">Membuat TodoList</h4>
-                <p>Membuat TodoList dengan menggunakan JavaScript!</p>
+                <p>Membuat website dengan menggunakan JavaScript dengan Tema Random!</p>
                 <div>
-                  <a href="https://github.com/Rizkiskandar" target="_blank" class="btn btn-dark">Github</a>
+                  <a href="https://github.com/Rizkiskandar" target="_blank" class="btn btn-dark" style="font-size: 2rem;">Github</a>
                 </div>
               </div>
               <div class="col col-md-5 col-12 shadow p-3 rounded" data-aos="fade-right" data-aos-duration="1000">
@@ -94,7 +94,7 @@
                 <h4 class="pt-4">Membuat Game Pasien</h4>
                 <p>Membuat Game Pasien dengan menggunakan Greenfood!</p>
                 <div>
-                  <a href="https://github.com/DikyGIT/lp-4" target="_blank" class="btn btn-dark">Github</a>
+                  <a href="https://github.com/DikyGIT/lp-4" target="_blank" class="btn btn-dark" style="font-size: 2rem;">Github</a>
                 </div>
               </div>
             </div>
@@ -145,7 +145,7 @@
 </section>
 
 <!-- Skills Section -->
-<section class="skills" id="skills" style="padding-top: 5rem; background-color: #212529;">
+<section class="skills" id="skills" style="padding-top: 5rem; background-color: #212529; background:transparent;">
     <div class="container py-5">
         <div class="row text-center mb-4" style="margin-left: -5rem;">
             <div class="col">
@@ -153,7 +153,7 @@
                 <p>Here are the skills I have mastered</p>
             </div>
         </div>
-        <div class="row offset-md-1">
+        <div class="row offset-md-1 bg-transparent">
             <div class="col-md-5 col-sm-12 mb-4">
                 <div class="skill-card text-center shadow p-3">
                     <i class="bi bi-code-slash skill-icon"></i>
@@ -231,7 +231,7 @@
     
     <footer class="footer">
         <div class="container text-center">
-            <p class="mb-0">&copy; 2023 Iskandar. All Rights Reserved.</p>
+            <p class="mb-0">&copy; 2024 Iskandar. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -250,9 +250,8 @@
                 "line_linked": { "enable": true, "distance": 150, "color": "#ff5722", "opacity": 0.5, "width": 1 }
             },
             "interactivity": { "events": { "onhover": { "enable": true, "mode": "repulse" } } }
-        });
+        });  
     </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
-            AOS.init();
 </body>
 </html>
