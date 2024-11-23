@@ -1,0 +1,933 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #1c1c1c; /* Ubah warna latar belakang */
+    --text-color: #ffffff; /* Ubah warna teks */
+    --main-color: #ff5722; /* Ubah warna utama */
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #ffffff;
+    color: #ff5722;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover {
+    color: #ff5722; /* Ubah warna saat hover */
+    text-shadow: 0 0 5px rgba(255, 87, 34, 0.5); /* Tambahkan efek bayangan */
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+    justify-content: space-between;
+}
+
+.home-content {
+    max-width: 60rem;
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h1 span {
+    display: inline-block;
+    animation: bounceIn 1.2s ease-in-out infinite;
+}
+
+@keyframes bounceIn {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.home-content .text-animate {
+    position: relative;
+    width: 32.8rem;
+}
+
+.home-content .text-animate h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--main-color);
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+/* Efek hover gambar proyek */
+.projects-box img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.projects-box img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.projects h1,
+.projects h4,
+.projects p {
+    color: #ffffff; /* Ganti dengan warna yang diinginkan */
+}
+
+.projects {
+    margin-bottom: 50px; /* Tambahkan margin-bottom untuk memberikan jarak lebih banyak */
+}
+
+.btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.btn-box .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan pada tombol */
+    transition: all 0.3s ease; /* Tambahkan transisi pada tombol */
+}
+
+.btn-box .btn:hover {
+    background: #ff5722; /* Ubah warna latar belakang tombol saat hover */
+    color: #ffffff; /* Ubah warna teks tombol saat hover */
+    transform: translateY(-2px); /* Efek angkat saat hover */
+}
+
+.btn-box .btn:nth-child(2) {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover {
+    color: var(--bg-color);
+}
+
+.btn-box .btn:nth-child(2)::before {
+    background: var(--main-color);
+}
+
+.btn-box .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box .btn:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute; /* Memastikan posisi ikon tetap di bawah konten */
+    bottom: 4rem; /* Jarak dari bawah */
+    display: flex; /* Mengatur ikon dalam baris */
+    justify-content: center; /* Memusatkan ikon secara horizontal */
+    gap: 15px; /* Jarak antar ikon */
+}
+
+.social-icon {
+    color: var(--main-color); /* Menggunakan warna utama */
+    font-size: 2.5rem; /* Ukuran ikon */
+    transition: transform 0.3s, color 0.3s; /* Transisi halus */
+}
+
+.social-icon:hover {
+    color: #ffffff; /* Mengubah warna saat hover */
+    transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50px;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.home-sci a:hover {
+    color: var(--bg-color);
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-img {
+    width: 410px;
+    height: 410px;
+    margin-left: 200px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;  
+    animation-delay: 2.1s, 3.1s;
+}
+
+ .home-img .glowing-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img .glowing-circle::after {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.glowing-circle .image {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    z-index: 1;
+    overflow: hidden; 
+}
+
+.image img {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+}
+
+.glowing-circle span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ff5722, #3cf);
+    border-radius: 50%;
+    animation: circleRotate 5s linear infinite;
+}
+
+.glowing-circle span:nth-child(1) {
+    filter: blur(10px);
+} */
+
+.glowing-circle .image{
+    position: relative;
+    width: 380px;
+    height: 380px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+@keyframes slideTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-24px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes circleRotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
+
+.heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span {
+    color: #ff5722;
+}
+
+.about-img {
+    position: relative;
+    width: 40rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 90%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0.3rem;
+}
+
+.btn-box.btns {
+    display: inline-block;
+    width: 15rem;
+}
+
+.btn-box.btns a::before {
+    background: var(--second-bg-color);
+}
+
+/* services */
+/* Our Services Section */
+#services {
+    padding: 60px 40px;
+    background-color: #212529;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .services-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .services-container .highlight {
+    color: #ffffff;
+  }
+  
+  .service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .service-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px #ff5722;
+    background-color: #f0f8ff; /* Warna latar belakang saat hover */
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    color: #ff5722;
+    margin-bottom: 20px;
+    transition: color 0.3s ease; /* Transisi warna */
+}
+
+.service-card:hover .icon {
+    color: #000000; /* Ubah warna ikon saat hover */
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.service-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #333; /* Warna teks yang lebih gelap untuk kontras yang lebih baik */
+    line-height: 1.6;
+}
+
+.service-card .read-more {
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Tambahkan transisi */
+}
+
+.service-card .read-more:hover {
+    background-color: #000000;
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.contact h4 {
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+    background: #ff5722;
+}
+
+/* Skill Section */
+.skills {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+}
+
+.skills .container {
+    padding-left: 2rem;
+    /* margin-left: 2rem; */
+}
+
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ff5722;
+}
+
+.skill-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: #ff5722;
+    margin-bottom: 1rem;
+}
+
+.skill-bar {
+    background: #e9ecef;
+    border-radius: 25px;
+    height: 15px;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.skill-percentage {
+    height: 100%;
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: skillLoad 2s ease-in-out;
+}
+
+.skills-section {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem; /* Menambahkan jarak antar bagian */
+  }
+
+/* Specific skill percentages */
+.html {
+    width: 90%;
+    background: #e44d26;
+}
+
+.css {
+    width: 85%;
+    background: #264de4;
+}
+
+.js {
+    width: 80%;
+    background: #f7df1e;
+}
+
+.sql {
+    width: 75%;
+    background: #4479a1;
+}
+
+
+
+/* Animation for skill bar */
+@keyframes skillLoad {
+    from {
+        width: 0;
+    }
+    to {
+        width: inherit;
+    }
+}
+
+.navbar a i {
+    margin-right: 0.5rem; /* Spasi antara ikon dan teks */
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+  }
+
+.contact-info p i {
+    margin-right: 0.5rem; /* Spasi antara ikon dan teks */
+    color: var(--main-color); /* Menggunakan warna utama untuk ikon */
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 9%;
+    background: var(--second-bg-color);
+  }
+  
+  .contact h2 {
+    margin-bottom: 2rem;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--main-color);
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .contact-info p {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+  }
+  
+  .contact-info i {
+    margin-right: 0.5rem;
+    color: var(--main-color);
+    font-size: 2rem;
+  }
+  
+  .contact-form {
+    max-width: 70rem;
+    margin: 2rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-form .input-box input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: 0.8rem;
+    margin: 0.7rem 0;
+  }
+  
+  .contact-form .input-box input {
+    width: 49%;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+    height: 10rem;
+  }
+  
+  .contact-form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+    background: #ff5722;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    transition: 0.3s;
+  }
+  
+  .contact-form .btn:hover {
+    background: #ff6347;
+    transform: translateY(-2px);
+  }
+
+.input-box {
+    display: flex;
+    justify-content: space-between; /* Menyebar input di antara ruang */
+    width: 100%; /* Mengatur lebar input box */
+    max-width: 600px; /* Mengatur lebar maksimum */
+    margin-bottom: 1rem; /* Menambahkan margin bawah */
+}
+
+.input-box input, 
+.textarea {
+    width: 48%; /* Mengatur lebar input agar pas di dalam box */
+}
+
+textarea {
+    width: 100%; /* Mengatur lebar textarea */
+    margin-bottom: 1rem; /* Menambahkan margin bawah */
+}
+
+.contact-info {
+    text-align: center; /* Memusatkan teks di dalam kontak info */
+    margin-top: 2rem; /* Menambahkan margin atas */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.home-content h1 {
+    animation: fadeIn 1s ease forwards; /* Ganti animasi dengan fadeIn */
+}
+
+.social-icon:hover {
+    color: #ff5722; /* Ubah warna ikon sosial saat hover */
+    transform: scale(1.2); /* Efek zoom lebih besar saat hover */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Pastikan partikel berada di belakang konten lainnya */
+}
+
+.footer {
+    background-color: var(--second-bg-color); /* Warna latar belakang footer */
+    color: var(--text-color); /* Warna teks di footer */
+    text-align: center; /* Memusatkan teks */
+    padding: 2rem 0; /* Padding atas dan bawah */
+    position: relative; /* Agar footer tetap di bawah konten */
+    bottom: 0; /* Menempatkan footer di bagian bawah */
+    width: 100%; /* Lebar penuh */
+}
+
+.footer-content p {
+    margin: 0; /* Menghapus margin default */
+    font-size: 1.6rem; /* Ukuran font untuk teks di footer */
+}
+
+.progress-bar {
+    background: #e2e8f0;
+    border-radius: 5px;
+    height: 8px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 8px;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+  }
+
+  .journey-section {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 4rem; /* Menambahkan jarak antar bagian */
+  }
+  
+  .journey-title {
+    font-size: 2.5rem;
+    color: #4a566a;
+  }
+  
+  .journey-subtitle {
+    font-size: 1rem;
+    color: #718096;
+    margin-bottom: 2rem;
+  }
+  
+  
+
+/* Background Gradient Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Apply Animation Globally */
+body {
+    background: linear-gradient(270deg, #1c1c1c, #3e3e3e, #6b6b6b, #1c1c1c);
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s linear infinite;
+}
+
+section {
+    background: linear-gradient(270deg, #ff5722, #3cf, #2d98da, #f368e0);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Header and Footer Pulsating Effect */
+@keyframes pulseBackground {
+    0% {
+        background-color: #ff5722;
+    }
+    50% {
+        background-color: #ff7043;
+    }
+    100% {
+        background-color: #ff5722;
+    }
+}
+
+header, footer {
+    animation: pulseBackground 5s ease-in-out infinite;
+}
